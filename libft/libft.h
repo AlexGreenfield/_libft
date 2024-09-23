@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 18:37:37 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/23 17:42:53 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:53:31 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+/*Part 1* - libc functions*/
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -36,3 +37,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
+
+/*Part 2 - aditional functions*/
+char	*ft_substr(char const *s, unsigned int start, size_t len);
