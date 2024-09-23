@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 17:02:45 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/23 20:28:21 by acastrov         ###   ########.fr       */
+/*   Created: 2024/09/23 20:43:36 by acastrov          #+#    #+#             */
+/*   Updated: 2024/09/23 20:44:01 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	while (*s != '\0')
-		s++;
-	while (!(c == *s))
-		s--;
-	if (c == *s)
-		return (s);
+	char	*st;
+
+	if (s == NULL)
+		return (NULL);
+	st = (char *)s;
+	st += ft_strlen(s);
+	while (st >= s)
+	{
+		if (*st == (char)c)
+			return (st);
+		st--;
+	}
 	return (NULL);
 }
