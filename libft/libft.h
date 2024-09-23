@@ -6,12 +6,13 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 18:37:37 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/23 16:07:55 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/23 17:20:16 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -33,3 +34,4 @@ int		ft_strncmp(const char *s0, const char *s2, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 int		ft_atoi(const char *nptr);
+void	*ft_calloc(size_t nmemb, size_t size);
