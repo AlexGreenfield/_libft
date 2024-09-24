@@ -6,11 +6,11 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 19:00:48 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/20 16:21:44 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
