@@ -6,13 +6,17 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 18:37:37 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/23 21:16:32 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:14:31 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
-#include <stdint.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+/*Libraries included*/
+# include <string.h>
+# include <stdlib.h>
+# include <stdint.h>
 
 /*Part 1* - libc functions*/
 int		ft_isalnum(int c);
@@ -41,3 +45,6 @@ char	*ft_strdup(const char *s);
 /*Part 2 - aditional functions*/
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+
+#endif

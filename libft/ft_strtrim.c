@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 19:14:09 by acastrov          #+#    #+#             */
+/*   Created: 2024/09/24 16:51:51 by acastrov          #+#    #+#             */
 /*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Compares 2 strings and gives diff
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+// Trims the beggining and end of a str if contains any of set chars
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	i;
+	char	*s1b;
+	char	*s1e;
 
-	i = 0;
-	while (*s1 && *s2 && i < n && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-		i++;
-	}
-	if (i == n)
-		return (0);
-	return (*s1 - *s2);
+	if (!s1 || !set)
+		return (NULL);
+	s1b = (char *)s1;
+	s1e = (char *)s1 + ft_strlen(s1) - 1;
+	while (*s1b && ft_strchr(set, *s1b))
+		s1b++;
+	while (s1e > s1b && ft_strchr(set, *s1e))
+		s1e--;
+	return (ft_substr(s1b, 0, s1e - s1b));
 }

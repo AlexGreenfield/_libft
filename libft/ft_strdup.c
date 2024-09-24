@@ -6,12 +6,13 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:41:52 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/23 18:08:59 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
+// Copies a const string on a new string with malloc
 char	*ft_strdup(const char *s)
 {
 	unsigned char	*p;

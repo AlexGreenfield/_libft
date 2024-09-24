@@ -6,11 +6,11 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:13:21 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/19 15:50:10 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
