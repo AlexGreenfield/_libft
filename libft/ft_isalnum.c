@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 19:04:10 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:51:09 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (isalpha(c) || isdigit(c))
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (c);
 	return (0);
 }
