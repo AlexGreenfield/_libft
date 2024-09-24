@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:41:52 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/24 20:58:08 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/24 21:35:15 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*ft_strdup(const char *s)
 {
 	char	*p;
-	size_t			sl;
+	size_t	sl;
 
 	if (s == NULL)
 		return (NULL);
