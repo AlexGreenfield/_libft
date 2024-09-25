@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 20:24:45 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/25 19:47:32 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,18 @@
 // Locates a subbstring in a string
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
+	size_t	ll;
+
 	if (!(*little))
 		return ((char *)big);
-	while (*big && len--)
+	ll = ft_strlen(little);
+	if (ll > len)
+		return (NULL);
+	while (*big && len >= ll)
 	{
-		if ((ft_strncmp(big, little, ft_strlen(little))))
+		if (ft_strncmp(big, little, ll) == 0)
 			return ((char *)big);
+		len--;
 		big++;
 	}
 	return (NULL);
