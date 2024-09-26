@@ -6,58 +6,72 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 20:17:02 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/26 16:37:30 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:09:26 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Static, counts the number of substrings of s separatedd by char c
+// Static, counts the number of substrings of s separated by char c
 static size_t	ft_substrcount(char const *s, char c)
 {
-	size_t	sc;
+	size_t	string_count;
 
-	sc = 0;
+	string_count = 0;
 	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (*s)
-			sc++;
+			string_count++;
 		while (*s && *s != c)
 			s++;
 	}
-	return (sc);
+	return (string_count);
 }
 
 // Splits one string into different substring by an specific char
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-    char
-    size_t  sc;
+	char	**splitf;
+	int		i;
+	char	*fc;
+	size_t	sc;
 
 	if (!s || !c)
 		return (NULL);
-    sc = ft_substrcount(s, c) + 1;
+	sc = ft_substrcount(s, c) + 1;
 	split = malloc(sc * sizeof(char *));
 	if (!split)
 		return (NULL);
+	splitf = split;
 	while (*s)
 	{
 		while (*s == c)
 			s++;
-		if (*s != c)
+		if (*s != c && *s)
 		{
-            fc = ft_strchr(s, c);
-            if (!fc)
-
-			*split = ft_substr(s, 0, fc - s);
+			fc = ft_strchr((char *)s, c);
+			if (!fc)
+				fc = (char *)s + ft_strlen(s);
+			*split = ft_substr(s, 0, fc - (char *)s);
+			if (!*split)
+			{
+				while (!--sc) // No acompana pos split
+				{
+					free(*split);
+					split--;
+				}
+				free(split);
+				return (NULL);
+			}
 			split++;
+			sc--;
+			s = fc; // Bucle infinito aqui
 		}
-		s += fc - s;
 	}
-    *split = NULL;
-	return (split);
+	*split = NULL;
+	return (splitf);
 }
 
 #include <stdio.h>
