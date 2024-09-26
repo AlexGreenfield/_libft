@@ -20,7 +20,7 @@ $(NAME): $(OBJS)
 	@ar -rcs $(NAME)  $(OBJS)
 
 clean:
-	@rm -rf $(OBJS) $(B_OBJS)
+	@rm -rf $(OBJS)
 
 fclean: clean
 	@rm -rf $(NAME)

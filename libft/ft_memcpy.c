@@ -6,12 +6,12 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:57:19 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/25 20:22:31 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Copy memory area
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*p;

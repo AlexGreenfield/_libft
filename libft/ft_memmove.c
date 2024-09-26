@@ -6,12 +6,12 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:33:44 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/25 20:23:46 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Copies without overlaping
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*d;
