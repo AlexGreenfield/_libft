@@ -10,7 +10,7 @@ OBJS = $(SRCS:.c=.o)
 
 CFLAGS = -Werror -Wextra -Wall
 
-CC = gcc
+CC = cc
 
 all: $(NAME)
 %.o: %.c

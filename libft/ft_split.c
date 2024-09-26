@@ -6,13 +6,13 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 20:17:02 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/26 20:06:56 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/26 20:49:42 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // Static, counts the number of substrings of s separated by char c
-static size_t	ft_substrcount(char const *s, char c)
+static size_t	ft_substr_count(char const *s, char c)
 {
 	size_t	substr_count;
 
@@ -29,15 +29,23 @@ static size_t	ft_substrcount(char const *s, char c)
 	return (substr_count);
 }
 
-// Creates substr ands frees memorie if fault
-static char	**ft_create_array(char const *s, char c, char **split, size_t substr_count)
+// Static, locates the next iteration of c or end of string
+static char	*ft_locate_c(char const *s, char c)
 {
-	char	*next_c;
+	char	*c_founded;
 
-	next_c = ft_strchr((char *)s, c);
-	if (!next_c)
-		next_c = (char *)s + ft_strlen(s);
-	*split = ft_substr(s, 0, next_c - (char *)s);
+	c_founded = ft_strchr((char *)s, c);
+	if (!c_founded)
+		c_founded = (char *)s + ft_strlen(s);
+	return (c_founded);
+}
+
+// Creates substr ands frees memorie if fault
+static char	**ft_create_array(char const *s, char c, char **split, size_t ss_count)
+{
+	char	*substr;
+
+	*substr = ft_substr(s, 0, next_c - (char *)s);
 	if (!*split)
 	{
 		while (!--substr_count)
@@ -51,35 +59,54 @@ static char	**ft_create_array(char const *s, char c, char **split, size_t substr
 	return (split);
 }
 
+// Inicialates all sub ft and tries to create array, calls abort if it fails
+ft_create-split
+	next_c = ft_locate_c;
+				split[i] = ft_create_array(s, c, split, substr_count);
+				if (split[i] = NULL)
+				{
+					ft_abort(split);
+					return(NULL);
+				}
+				split++;
+				substr_count--;
+
 // Splits one string into different substring by an specific char
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	char	**split_initial_pointer;
+	char	*next_c;
+	int		i;
 	size_t	substr_count;
 
 	if (!s || !c)
 		return (NULL);
-	substr_count = ft_substrcount(s, c) + 1;
+	substr_count = ft_substr_count(s, c) + 1;
 	split = malloc(substr_count * sizeof(char *));
 	if (!split)
 		return (NULL);
-	split_initial_pointer = split;
+	return(ft_create_split);
+
+
+
 	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (*s != c && *s)
 		{
-			ft_create_array(s, c, split, substr_count);
-			split++;
-			substr_count--;
+			ft_create_split;
+				next_c = ft_locate_c;
+				split[i] = ft_create_array(s, c, split, substr_count);
+				if (split[i] = NULL)
+					ft_abort(split);
+				split++;
+				substr_count--;
 		}
-		s++;
-		s = ft_strchr((char *)s, c);
+		s = next_c;
 	}
-	*split = NULL;
-	return (split_initial_pointer);
+	split[i] = NULL;
+	return (split);
 }
 
 #include <stdio.h>
