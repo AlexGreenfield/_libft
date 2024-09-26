@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 20:17:02 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/26 20:06:56 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/26 18:09:26 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,72 +14,64 @@
 // Static, counts the number of substrings of s separated by char c
 static size_t	ft_substrcount(char const *s, char c)
 {
-	size_t	substr_count;
+	size_t	string_count;
 
-	substr_count = 0;
+	string_count = 0;
 	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (*s)
-			substr_count++;
+			string_count++;
 		while (*s && *s != c)
 			s++;
 	}
-	return (substr_count);
-}
-
-// Creates substr ands frees memorie if fault
-static char	**ft_create_array(char const *s, char c, char **split, size_t substr_count)
-{
-	char	*next_c;
-
-	next_c = ft_strchr((char *)s, c);
-	if (!next_c)
-		next_c = (char *)s + ft_strlen(s);
-	*split = ft_substr(s, 0, next_c - (char *)s);
-	if (!*split)
-	{
-		while (!--substr_count)
-		{
-			free(*split);
-			split--;
-		}
-		free(split);
-		return (NULL);
-	}
-	return (split);
+	return (string_count);
 }
 
 // Splits one string into different substring by an specific char
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
-	char	**split_initial_pointer;
-	size_t	substr_count;
+	char	**splitf;
+	int		i;
+	char	*fc;
+	size_t	sc;
 
 	if (!s || !c)
 		return (NULL);
-	substr_count = ft_substrcount(s, c) + 1;
-	split = malloc(substr_count * sizeof(char *));
+	sc = ft_substrcount(s, c) + 1;
+	split = malloc(sc * sizeof(char *));
 	if (!split)
 		return (NULL);
-	split_initial_pointer = split;
+	splitf = split;
 	while (*s)
 	{
 		while (*s == c)
 			s++;
 		if (*s != c && *s)
 		{
-			ft_create_array(s, c, split, substr_count);
+			fc = ft_strchr((char *)s, c);
+			if (!fc)
+				fc = (char *)s + ft_strlen(s);
+			*split = ft_substr(s, 0, fc - (char *)s);
+			if (!*split)
+			{
+				while (!--sc) // No acompana pos split
+				{
+					free(*split);
+					split--;
+				}
+				free(split);
+				return (NULL);
+			}
 			split++;
-			substr_count--;
+			sc--;
+			s = fc; // Bucle infinito aqui
 		}
-		s++;
-		s = ft_strchr((char *)s, c);
 	}
 	*split = NULL;
-	return (split_initial_pointer);
+	return (splitf);
 }
 
 #include <stdio.h>
