@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_old.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 20:17:02 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/26 18:09:26 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/27 18:21:56 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ char	**ft_split(char const *s, char c)
 					free(*split);
 					split--;
 				}
-				free(split);
-				return (NULL);
+				return (free(split), NULL);
 			}
 			split++;
 			sc--;
@@ -85,6 +84,7 @@ int main(void)
 
     // Test 1
     char *test1 = "Hello World from 42!";
+
     printf("Test 1: Splitting \"%s\" by space\n", test1);
     result = ft_split(test1, ' ');
     i = 0;

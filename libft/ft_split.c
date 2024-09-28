@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 20:17:02 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/27 17:30:48 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/28 18:48:56 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ static char	*ft_locate_next_c(char const *s, char c)
 // If error, frees all and return NULL, may need changes
 static char	**ft_free_split(char **split, size_t count)
 {
-	int	split_position;
+	size_t	split_position;
 
 	split_position = 0;
 	while (split_position < count)

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 16:10:11 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/28 20:59:50 by acastrov         ###   ########.fr       */
+/*   Created: 2024/09/18 16:35:27 by acastrov          #+#    #+#             */
+/*   Updated: 2024/09/28 20:04:19 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Compare memory areas
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+// Locates first char in a string
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*s1_copy;
-	unsigned char	*s2_copy;
-
-	s1_copy = (unsigned char *)s1;
-	s2_copy = (unsigned char *)s2;
-	while (n--)
+	if (s == NULL)
+		return (NULL);
+	while (*s)
 	{
-		if (*s1_copy != *s2_copy)
-			return (*s1_copy - *s2_copy);
-		s1_copy++;
-		s2_copy++;
+		if ((char)c == *s)
+			return ((char *)s);
+		s++;
 	}
-	return (0);
+	if (c == '\0')
+		return ((char *)s);
+	return (NULL);
 }

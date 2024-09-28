@@ -6,12 +6,12 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 21:16:07 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/26 14:02:15 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/28 19:54:19 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Checks, calculates size, allocates memory and cat 2 strings via strlcpy, memcpy '\0'
+// Calculates size, allocates memory and cat 2 strings via strlcpy
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ts;
