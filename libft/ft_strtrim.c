@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:51:51 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:07:40 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		s1b++;
 	while (s1e > s1b && ft_strchr(set, *s1e))
 		s1e--;
-	return (ft_substr(s1b, 0, s1e - s1b));
+	return (ft_substr(s1b, 0, s1e - s1b + 1));
 }
