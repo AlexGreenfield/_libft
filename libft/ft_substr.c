@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:54:34 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/25 20:26:04 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/29 19:12:32 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ss;
 	size_t	sl;
 
-	if (len == 0 || !s)
-		return (NULL);
 	sl = ft_strlen(s);
 	if (start >= sl)
 		return (ft_strdup(""));
