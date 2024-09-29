@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 20:24:45 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/25 19:47:32 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/29 19:25:26 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	ll;
 
-	if (!(*little))
+	if (*little == '\0')
 		return ((char *)big);
 	ll = ft_strlen(little);
-	if (ll > len)
-		return (NULL);
 	while (*big && len >= ll)
 	{
 		if (ft_strncmp(big, little, ll) == 0)
