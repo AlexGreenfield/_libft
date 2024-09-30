@@ -6,7 +6,7 @@
 #    By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 17:54:28 by acastrov          #+#    #+#              #
-#    Updated: 2024/09/30 16:31:22 by acastrov         ###   ########.fr        #
+#    Updated: 2024/09/30 19:17:45 by acastrov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,11 @@ SRCS =	ft_isalnum.c \
 	ft_split.c \
 	ft_itoa.c \
 	ft_strmapi.c \
-
+	ft_striteri.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
 
 OBJS = $(SRCS:.c=.o)
 
