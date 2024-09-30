@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 21:16:07 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/28 19:54:19 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/30 20:15:51 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ts;
 	size_t	tl;
-	size_t	sl1;
-	size_t	sl2;
 
 	if (!s1 || !s2)
 		return (NULL);
-	sl1 = ft_strlen(s1);
-	sl2 = ft_strlen(s2);
-	tl = sl1 + sl2 + 1;
+	tl = ft_strlen(s1) + ft_strlen(s2) + 1;
 	ts = malloc(tl);
 	if (!ts)
 		return (NULL);
-	ft_strlcpy(ts, s1, sl1 + 1);
-	ft_strlcpy((ts + sl1), s2, sl2 + 1);
+	ft_strlcpy(ts, s1, ft_strlen(s1) + 1);
+	ft_strlcat(ts, s2, tl);
 	return (ts);
 }
