@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 18:37:37 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/29 21:01:55 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/09/30 16:26:22 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
