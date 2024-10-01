@@ -6,12 +6,12 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:54:34 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 16:52:40 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 20:04:46 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Creates substring from a char, ads null so only needs strlen
+// Creates substring of len bytes from a char, ads null so only needs strlen
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub_string;
