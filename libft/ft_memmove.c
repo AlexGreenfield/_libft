@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:33:44 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 16:13:32 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:49:00 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		while (n--)
 			*dest_copy++ = *src_copy++;
 	}
-	else if (src < dest)
+	else if (dest > src)
 	{
 		dest_copy += n;
 		src_copy += n;
