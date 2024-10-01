@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 20:24:45 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 16:44:18 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 19:47:06 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	if (*little == '\0')
 		return ((char *)big);
-	little_len = ft_strlen(little);
-	while (*big && len >= little_len)
+	little_len = ft_strlen(little); // We determine the size of little to compare against the remaining size of the string when looping
+	while (*big && len >= little_len) // If len is equal to little_len, we reached the end of the scope of len, don-t go any further
 	{
-		if (ft_strncmp(big, little, little_len) == 0)
+		if (ft_strncmp(big, little, little_len) == 0) // We use ft_strncmp as the condition of the if. If ft_strncmp returns 0, it means that there's a exact match
 			return ((char *)big);
 		len--;
 		big++;
 	}
-	return (NULL);
+	return (NULL); // If there's not match, return NULL
 }
