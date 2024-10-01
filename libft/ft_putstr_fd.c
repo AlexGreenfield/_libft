@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 16:25:10 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 16:25:19 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:43:06 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (*s)
-		write(fd, s, ft_strlen(s));
+		write(fd, s, ft_strlen(s)); // Write using strlen to calculate bit size
 }

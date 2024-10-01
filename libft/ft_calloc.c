@@ -6,24 +6,24 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:31:39 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 16:04:04 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:23:26 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 // Create an string with malloc and fills with 0, checks if arg exceeds size_t
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size) // nmemb is the number of elements we want to allocate (4 chars, 2 ints...) and size is the type of data (1 for char, 4 for int...)
 {
-	void	*return_pointer;
-	size_t	total_size;
+	void	*return_pointer; // pointer to return
+	size_t	total_size; // total size of the resulting string
 
-	if (nmemb > SIZE_MAX / size)
+	if (nmemb > SIZE_MAX / size) // We need to check that the multiply of nmemb and size doesnt overflow, so we check the modulus of the division, NULL if it fails
 		return (NULL);
 	total_size = size * nmemb;
-	return_pointer = malloc(total_size);
+	return_pointer = malloc(total_size); // We allocate size with malloc, NULL if it fails
 	if (return_pointer == NULL)
 		return (NULL);
-	ft_bzero(return_pointer, total_size);
+	ft_bzero(return_pointer, total_size); // Call to bzero to fill the string with 0
 	return (return_pointer);
 }

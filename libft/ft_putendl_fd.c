@@ -6,13 +6,13 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 18:50:50 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 16:18:44 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:39:08 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 // Call to write with an string an a line jump, variable file descriptor
-void	ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd) // Same as putstr with jumline
 {
 	if (s != NULL)
 	{

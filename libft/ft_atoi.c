@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:52:25 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 18:12:24 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 18:13:42 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int ft_atoi(const char *nptr) // 1st argument, a char that cannot be changed
 }
 
 #include <stdio.h>  // For printf
-#include "libft.h"  // Assuming ft_atoi is part of this header
 
 int main(void)
 {
