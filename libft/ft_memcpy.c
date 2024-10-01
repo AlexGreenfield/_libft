@@ -6,20 +6,20 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:57:19 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/29 18:58:55 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:09:51 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Copy memory area
+// Copy memory value in a new area
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*p;
+	unsigned char	*return_pointer;
 
 	if (dest == NULL && src == NULL)
 		return (NULL);
-	p = (unsigned char *)dest;
+	return_pointer = (unsigned char *)dest;
 	while (n--)
-		*p++ = *(unsigned char *)src++;
+		*return_pointer++ = *(unsigned char *)src++;
 	return (dest);
 }

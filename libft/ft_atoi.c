@@ -6,32 +6,32 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:52:25 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/24 20:09:31 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:00:24 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Takes a const char, manages spaces and symbols and returns an int
 int	ft_atoi(const char *nptr)
 {
-	int	s;
-	int	r;
+	int	symbol;
+	int	result;
 
-	s = 1;
-	r = 0;
+	symbol = 1;
+	result = 0;
 	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 		nptr++;
 	if (*nptr == '-')
 	{
-		s = -1;
+		symbol = -1;
 		nptr++;
 	}
 	else if (*nptr == '+')
 		nptr++;
 	while (*nptr >= '0' && *nptr <= '9')
 	{
-		r = (r * 10) + (*nptr - '0');
+		result = (result * 10) + (*nptr - '0');
 		nptr++;
 	}
-	return (r * s);
+	return (result * symbol);
 }

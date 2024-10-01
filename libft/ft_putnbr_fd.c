@@ -6,12 +6,12 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 19:18:05 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/30 19:22:13 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:19:35 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Call to write with an int (putnbr logic for conversion) and variable fd
 void	ft_putnbr_fd(int n, int fd)
 {
 	int	d;

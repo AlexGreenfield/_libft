@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 16:27:26 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/30 17:58:56 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:37:27 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*dest_string;
-	unsigned int	len;
+	unsigned int	dest_string_len;
 	unsigned int	i;
 
-	len = (unsigned int)ft_strlen(s);
+	dest_string_len = (unsigned int)ft_strlen(s);
 	i = 0;
-	dest_string = malloc(len + 1);
+	dest_string = malloc(dest_string_len + 1);
 	if (!dest_string)
 		return (NULL);
-	while (i < len)
+	while (i < dest_string_len)
 	{
 		dest_string[i] = f(i, s[i]);
 		i++;
@@ -31,30 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	dest_string[i] = '\0';
 	return (dest_string);
 }
-/*
-char my_func(unsigned int i, char c)
-{
-	if (i % 2 == 0)
-		return ft_toupper(c);
-	return c;
-}
-#include <stdio.h>
-#include <stdlib.h>
-int main(void)
-{
-	char *str = "hello, world!";
-	char *result = ft_strmapi(str, my_func);
-
-	if (result)
-	{
-		printf("Original string: %s\n", str);
-		printf("Modified string: %s\n", result);
-		free(result);
-	}
-	else
-	{
-		printf("ft_strmapi returned NULL\n");
-	}
-
-	return 0;
-}*/

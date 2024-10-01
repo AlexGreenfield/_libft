@@ -6,18 +6,18 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 19:05:34 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/24 20:10:57 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:36:45 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Size of str without \0
+// Returns size of str via counting number of chars without \0
 size_t	ft_strlen(const char *s)
 {
-	size_t	i;
+	size_t	string_size;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+	string_size = 0;
+	while (s[string_size] != '\0')
+		string_size++;
+	return (string_size);
 }

@@ -6,24 +6,24 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:31:39 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/29 19:51:08 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:04:04 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Uses malloc and fills with 0, checks if arg exceeds size_t
+// Create an string with malloc and fills with 0, checks if arg exceeds size_t
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*p;
-	size_t	s;
+	void	*return_pointer;
+	size_t	total_size;
 
 	if (nmemb > SIZE_MAX / size)
 		return (NULL);
-	s = size * nmemb;
-	p = malloc(s);
-	if (p == NULL)
+	total_size = size * nmemb;
+	return_pointer = malloc(total_size);
+	if (return_pointer == NULL)
 		return (NULL);
-	ft_bzero(p, s);
-	return (p);
+	ft_bzero(return_pointer, total_size);
+	return (return_pointer);
 }

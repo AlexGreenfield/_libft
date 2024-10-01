@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 18:50:50 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/30 19:14:17 by acastrov         ###   ########.fr       */
+/*   Created: 2024/10/01 16:25:10 by acastrov          #+#    #+#             */
+/*   Updated: 2024/10/01 16:25:19 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+// Call to write for an entire string, variable file descriptor
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (*s)

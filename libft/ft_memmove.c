@@ -6,19 +6,19 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 16:33:44 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/29 19:01:14 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:13:32 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Copies without overlaping
+// Copies without overlaping, if src < dest copies in reverse to avoid overlap
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	unsigned char	*dest_copy;
+	unsigned char	*src_copy;
 
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
+	dest_copy = (unsigned char *)dest;
+	src_copy = (unsigned char *)src;
 	if (n == 0)
 		return (dest);
 	if (dest == NULL && src == NULL)
@@ -26,14 +26,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (dest < src)
 	{
 		while (n--)
-			*d++ = *s++;
+			*dest_copy++ = *src_copy++;
 	}
 	else if (src < dest)
 	{
-		d += n;
-		s += n;
+		dest_copy += n;
+		src_copy += n;
 		while (n--)
-			*--d = *--s;
+			*--dest_copy = *--src_copy;
 	}
 	return (dest);
 }
