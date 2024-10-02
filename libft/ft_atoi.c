@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:52:25 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 18:13:42 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:00:24 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,31 +47,4 @@ int ft_atoi(const char *nptr) // 1st argument, a char that cannot be changed
 
     // Return the final result, adjusting for the sign determined earlier.
     return (result * symbol);
-}
-
-#include <stdio.h>  // For printf
-
-int main(void)
-{
-    // Test cases
-    const char *test1 = "42";
-    const char *test2 = "    -42";
-    const char *test3 = "   +1234";
-    const char *test4 = "0";
-    const char *test5 = "999999";
-    const char *test6 = "-2147483648";  // Edge case: smallest 32-bit integer
-    const char *test7 = "2147483647";   // Edge case: largest 32-bit integer
-    const char *test8 = "  123abc456";  // Invalid part after number
-
-    // Printing results of ft_atoi
-    printf("Test 1: '%s' -> %d\n", test1, ft_atoi(test1));
-    printf("Test 2: '%s' -> %d\n", test2, ft_atoi(test2));
-    printf("Test 3: '%s' -> %d\n", test3, ft_atoi(test3));
-    printf("Test 4: '%s' -> %d\n", test4, ft_atoi(test4));
-    printf("Test 5: '%s' -> %d\n", test5, ft_atoi(test5));
-    printf("Test 6: '%s' -> %d\n", test6, ft_atoi(test6));
-    printf("Test 7: '%s' -> %d\n", test7, ft_atoi(test7));
-    printf("Test 8: '%s' -> %d\n", test8, ft_atoi(test8));
-
-    return 0;
 }
