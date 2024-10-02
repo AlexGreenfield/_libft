@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:31:39 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 18:23:26 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/02 21:35:48 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_calloc(size_t nmemb, size_t size) // nmemb is the number of elements we
 	void	*return_pointer; // pointer to return
 	size_t	total_size; // total size of the resulting string
 
-	if (nmemb > SIZE_MAX / size) // We need to check that the multiply of nmemb and size doesnt overflow, so we check the modulus of the division, NULL if it fails
-		return (NULL);
 	total_size = size * nmemb;
 	return_pointer = malloc(total_size); // We allocate size with malloc, NULL if it fails
 	if (return_pointer == NULL)
