@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:46:14 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/02 16:49:56 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/02 17:05:43 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	**ft_fill(char const *s, char c, char **split, size_t subcount)
 		if (*s != c && *s)
 		{
 			next_c = ft_locate_next_c(s, c);
-			split[array_count] = ft_substr(s, 0, next_c - (char *)s);
+			split[array_count] = ft_substr(s, 0, next_c - s);
 			if (!split[array_count])
 				return (ft_free_split(split, array_count));
 			array_count++;
@@ -83,7 +83,7 @@ static char	*ft_locate_next_c(char const *s, char c)
 {
 	char	*c_founded;
 
-	c_founded = ft_strchr((char *)s, c);
+	c_founded = ft_strchr(s, c);
 	if (!c_founded)
 		c_founded = (char *)s + ft_strlen(s);
 	return (c_founded);
