@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:31:39 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/01 16:04:04 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/02 21:31:20 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*return_pointer;
 	size_t	total_size;
 
-	if (nmemb > SIZE_MAX / size)
-		return (NULL);
 	total_size = size * nmemb;
 	return_pointer = malloc(total_size);
 	if (return_pointer == NULL)
