@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 20:17:02 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/28 18:48:56 by acastrov         ###   ########.fr       */
+/*   Created: 2024/10/02 16:46:14 by acastrov          #+#    #+#             */
+/*   Updated: 2024/10/02 16:46:37 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,26 +55,27 @@ static size_t	ft_substr_count(char const *s, char c)
 static char	**ft_fill(char const *s, char c, char **split, size_t count)
 {
 	char	*next_c;
-	char	**split_return;
+	size_t	array_count;
 
-	split_return = split;
-	while (*s && count > 0)
+	array_count = 0;
+	while (*s && array_count < count)
 	{
 		while (*s == c)
 			s++;
+		if (!*s)
+			break ;
 		if (*s != c && *s)
 		{
 			next_c = ft_locate_next_c(s, c);
-			*split = ft_substr(s, 0, next_c - (char *)s);
-			if (!*split)
-				return (ft_free_split(split, count));
-			split++;
-			count--;
+			split[array_count] = ft_substr(s, 0, next_c - (char *)s);
+			if (!split[array_count])
+				return (ft_free_split(split, array_count));
+			array_count++;
 		}
 		s = next_c;
 	}
-	*split = NULL;
-	return (split_return);
+	split[array_count] = NULL;
+	return (split);
 }
 
 // Static, locates the next iteration of c or end of string
@@ -102,3 +103,27 @@ static char	**ft_free_split(char **split, size_t count)
 	free(split);
 	return (NULL);
 }
+/*#include <stdio.h>
+#include "libft.h"
+
+int main(void)
+{
+    // Test case: string with multiple separators at the end
+
+    char **result;
+    int i;
+
+    result = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+
+    // Print the result
+
+    for (i = 0; result[i] != NULL; i++)
+    {
+        printf("Substring %d: \"%s\"\n", i + 1, result[i]);
+        free(result[i]); // Free each allocated substring after use
+    }
+    free(result); // Free the overall result array
+
+    return 0;
+}
+*/
