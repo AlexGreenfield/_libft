@@ -6,7 +6,7 @@
 #    By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 17:54:28 by acastrov          #+#    #+#              #
-#    Updated: 2024/10/03 21:28:38 by acastrov         ###   ########.fr        #
+#    Updated: 2024/10/03 21:34:14 by acastrov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,9 @@ B_SRCS = ft_lstnew_bonus.c \
 # The same as c objects
 B_OBJS = $(B_SRCS:.c=.o)
 
+# We create a hidden file for the bonus command, explanation below
+BONUS_CACHE = .cache
+
 # The flags that our compiler is gonna use
 CFLAGS = -Werror -Wextra -Wall
 
@@ -84,8 +87,12 @@ $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
 
 # We threat the bonuses different, and make an special command just for them : make bonus
-bonus: all $(B_OBJS)
-	@ar -rcs $(NAME) $(B_OBJS)
+# In this case we have created a hidden file, .cache, so if we run make bonus again it will detect that .cache already exits and won't execute again
+bonus: $(BONUS_CACHE)
+
+$(BONUS_CACHE): $(B_OBJS)
+	@touch $(BONUS_CACHE)
+	@ar -rcs $(NAME) $(B_OBJS)o
 
 # After we created our lib, we can remove all of our .o files with : make clean
 clean:
