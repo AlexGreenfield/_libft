@@ -50,6 +50,14 @@ SRCS =	ft_isalnum.c \
 
 OBJS = $(SRCS:.c=.o)
 
+B_SRCS = ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+
+B_OBJS = $(B_SRCS:.c=.o)
+
 CFLAGS = -Werror -Wextra -Wall
 
 CC = cc
@@ -59,14 +67,17 @@ all: $(NAME)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@ar -rcs $(NAME)  $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
+
+bonus: $(B_OBJS)
+	@ar -rcs $(NAME) $(B_OBJS)
 
 clean:
-	@rm -rf $(OBJS)
+	@rm -rf $(OBJS) $(B_OBJS)
 
 fclean: clean
 	@rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
