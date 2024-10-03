@@ -6,7 +6,7 @@
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 18:37:37 by acastrov          #+#    #+#             */
-/*   Updated: 2024/09/30 19:17:24 by acastrov         ###   ########.fr       */
+/*   Updated: 2024/10/03 16:59:27 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ void	ft_putnbr_fd(int n, int fd);
 /*Part 3 - bonus*/
 typedef struct s_list
 {
-    void *content;
-    struct s_list *next;
-} t_list;
-t_list *ft_lstnew(void *content);
-void ft_lstadd_front(t_list **lst, t_list *new);
-int ft_lstsize(t_list *lst);
-t_list *ft_lstlast(t_list *lst);
-void ft_lstadd_back(t_list **lst, t_list *new);
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif

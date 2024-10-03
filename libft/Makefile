@@ -6,7 +6,7 @@
 #    By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 17:54:28 by acastrov          #+#    #+#              #
-#    Updated: 2024/09/30 19:17:45 by acastrov         ###   ########.fr        #
+#    Updated: 2024/10/03 17:00:14 by acastrov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,11 +50,11 @@ SRCS =	ft_isalnum.c \
 
 OBJS = $(SRCS:.c=.o)
 
-B_SRCS = ft_lstnew.c \
-	ft_lstadd_front.c \
-	ft_lstsize.c \
-	ft_lstlast.c \
-	ft_lstadd_back.c \
+B_SRCS = ft_lstnew_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c \
+	ft_lstadd_back_bonus.c \
 
 B_OBJS = $(B_SRCS:.c=.o)
 
@@ -69,7 +69,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
 
-bonus: $(B_OBJS)
+bonus: all $(B_OBJS)
 	@ar -rcs $(NAME) $(B_OBJS)
 
 clean:
