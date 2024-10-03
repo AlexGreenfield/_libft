@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 16:57:34 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/03 17:40:30 by acastrov         ###   ########.fr       */
+/*   Created: 2024/10/03 17:30:58 by acastrov          #+#    #+#             */
+/*   Updated: 2024/10/03 17:42:29 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Adds a node to the beginning of a list
-void	ft_lstadd_front(t_list **lst, t_list *new)
+// Applies f ft to every node of a list
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	if (new)
+	while (lst)
 	{
-		new->next = *lst;
-		*lst = new;
+		f(lst->content);
+		lst = lst->next;
 	}
 }

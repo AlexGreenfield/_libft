@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/03 16:57:34 by acastrov          #+#    #+#             */
-/*   Updated: 2024/10/03 17:40:30 by acastrov         ###   ########.fr       */
+/*   Created: 2024/10/03 17:16:14 by acastrov          #+#    #+#             */
+/*   Updated: 2024/10/03 17:53:06 by acastrov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// Adds a node to the beginning of a list
-void	ft_lstadd_front(t_list **lst, t_list *new)
+// Clears the content of every node in a list with f ft and frees it
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (new)
+	t_list	*delete_previous;
+
+	while (*lst)
 	{
-		new->next = *lst;
-		*lst = new;
+		delete_previous = *lst;
+		del((*lst)->content);
+		*lst = (*lst)->next;
+		free(delete_previous);
 	}
 }
