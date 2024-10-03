@@ -6,7 +6,7 @@
 #    By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 17:54:28 by acastrov          #+#    #+#              #
-#    Updated: 2024/10/03 17:36:28 by acastrov         ###   ########.fr        #
+#    Updated: 2024/10/03 19:32:23 by acastrov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,14 +66,20 @@ CFLAGS = -Werror -Wextra -Wall
 
 CC = cc
 
+BONUS_CACHE = .cache
+
 all: $(NAME)
+
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	@ar -rcs $(NAME) $(OBJS)
 
-bonus: all $(B_OBJS)
+bonus: $(BONUS_CACHE)
+
+$(BONUS_CACHE): $(B_OBJS)
+	@touch $(BONUS_CACHE)
 	@ar -rcs $(NAME) $(B_OBJS)
 
 clean:
@@ -81,6 +87,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf $(BONUS_CACHE)
 
 re: fclean all
 
