@@ -6,13 +6,13 @@
 #    By: acastrov <acastrov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/27 17:54:28 by acastrov          #+#    #+#              #
-#    Updated: 2024/09/30 19:17:45 by acastrov         ###   ########.fr        #
+#    Updated: 2024/10/03 16:50:02 by acastrov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS =	ft_isalnum.c \
+SRCS = ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
 	ft_isdigit.c \
@@ -24,7 +24,6 @@ SRCS =	ft_isalnum.c \
 	ft_strlen.c \
 	ft_strncmp.c \
 	ft_memset.c \
-	ft_memchr.c \
 	ft_bzero.c \
 	ft_memchr.c \
 	ft_memcpy.c \
@@ -50,16 +49,35 @@ SRCS =	ft_isalnum.c \
 
 OBJS = $(SRCS:.c=.o)
 
+<<<<<<< Updated upstream
+=======
+B_SRCS = ft_lstnew_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstsize_bonus.c \
+	ft_lstlast_bonus.c \
+	ft_lstadd_back_bonus.c \
+
+B_OBJS = $(B_SRCS:.c=.o)
+
+>>>>>>> Stashed changes
 CFLAGS = -Werror -Wextra -Wall
 
 CC = cc
 
 all: $(NAME)
+
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
+<<<<<<< Updated upstream
 	@ar -rcs $(NAME)  $(OBJS)
+=======
+	@ar -rcs $(NAME) $(OBJS)
+
+bonus: all $(B_OBJS)
+	@ar -rcs $(NAME) $(B_OBJS)
+>>>>>>> Stashed changes
 
 clean:
 	@rm -rf $(OBJS)
